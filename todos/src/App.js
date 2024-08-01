@@ -23,12 +23,6 @@ function App() {
     setPosts([...posts, newPost]);
     setModal(false);
   }
- 
-  async function fetchPosts() {
-    // get-запрос для получения данных
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    console.log(response.data);
-  }
 
   // получаем post из дочернего компонента
   const removePost = (post) => {
@@ -37,7 +31,6 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={fetchPosts}>GET POSTS</button>
       <MyButton style={{marginTop: 30}}  onClick={() => setModal(true)}>
         Создать пользователя
       </MyButton>
